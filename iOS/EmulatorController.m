@@ -2864,7 +2864,8 @@ void myosd_handle_turbo() {
 -(void)moveROMS {
     NSFileManager *filemgr;
     NSArray *filelist;
-    int count;
+    //int count;
+    NSUInteger count;
     int i;
     
     //NSLog(@"checking roms!");
@@ -2891,8 +2892,13 @@ void myosd_handle_turbo() {
     
     if(count!=0)
     {
-        UIAlertController *progressAlert = [UIAlertController alertControllerWithTitle:@"Moving Newer ROMs" message:@"Please wait..." preferredStyle:UIAlertControllerStyleAlert];
-                UIProgressView *progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(30.0f, 80.0f, 225.0f, 90.0f)];
+        //UIAlertController *progressAlert = [UIAlertController alertControllerWithTitle:@"Moving Newer ROMs" message:@"Please wait..." preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertView *progressAlert = [[UIAlertView alloc] initWithTitle:@"Moving Newer ROMs"
+                                                                message:@"Please wait..."
+                                                               delegate:nil
+                                                      cancelButtonTitle:nil
+                                                      otherButtonTitles:nil];
+        UIProgressView *progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(30.0f, 80.0f, 225.0f, 90.0f)];
         [progressAlert addSubview:progressView];
 #if TARGET_OS_IOS
         [progressView setProgressViewStyle: UIProgressViewStyleBar];
