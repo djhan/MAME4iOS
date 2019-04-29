@@ -247,85 +247,85 @@
     
     switch (type) {
         case kTypeNumButtons:
-            op.numbuttons =value;
+            op.numbuttons =(int)value;
             break;
         case kTypeEmuRes:
-            op.emures =value;
+            op.emures =(int)value;
             break;
         case kTypeTouchType:
-            op.touchtype =value;
+            op.touchtype =(int)value;
             break;
         case kTypeStickType:
-            op.sticktype =value;
+            op.sticktype =(int)value;
             break;
         case kTypeControlType:
-            op.controltype =value;
+            op.controltype =(int)value;
             break;
         case kTypeAnalogDZValue:
-            op.analogDeadZoneValue =value;
+            op.analogDeadZoneValue =(int)value;
             break;
         case kTypeBTDZValue:
-            op.btDeadZoneValue =value;
+            op.btDeadZoneValue =(int)value;
             break;
         case kTypeSoundValue:
-            op.soundValue =value;
+            op.soundValue =(int)value;
             break;
         case kTypeFSValue:
-            op.fsvalue =value;
+            op.fsvalue =(int)value;
             break;
         case kTypeOverscanValue:
-            op.overscanValue =value;
+            op.overscanValue =(int)value;
             break;
         case kTypeSkinValue:
-            op.skinValue =value;
+            op.skinValue =(int)value;
             break;
         case kTypeManufacturerValue:
-            op.manufacturerValue =value;
+            op.manufacturerValue =(int)value;
             break;
         case kTypeYearGTEValue:
-            op.yearGTEValue =value;
+            op.yearGTEValue =(int)value;
             break;
         case kTypeYearLTEValue:
-            op.yearLTEValue =value;
+            op.yearLTEValue =(int)value;
             break;
         case kTypeDriverSourceValue:
-            op.driverSourceValue =value;
+            op.driverSourceValue =(int)value;
             break;
         case kTypeCategoryValue:
-            op.categoryValue =value;
+            op.categoryValue =(int)value;
             break;
         case kTypeVideoPriorityValue:
-            op.videoPriority =value;
+            op.videoPriority =(int)value;
             break;
         case kTypeMainPriorityValue:
-            op.mainPriority =value;
+            op.mainPriority =(int)value;
             break;
         case kTypeAutofireValue:
-            op.autofire =value;
+            op.autofire =(int)value;
             break;
         case kTypeButtonSizeValue:
-            op.buttonSize =value;
+            op.buttonSize =(int)value;
             break;
         case kTypeStickSizeValue:
-            op.stickSize =value;
+            op.stickSize =(int)value;
             break;
         case kTypeArrayWPANtype:
-            op.wpantype =value;
+            op.wpantype =(int)value;
             break;
         case kTypeWFframeSync:
-            op.wfframesync =value;
+            op.wfframesync =(int)value;
             break;
         case kTypeBTlatency:
-            op.btlatency =value;
+            op.btlatency =(int)value;
             break;
         case kTypeEmuSpeed:
-            op.emuspeed =value;
+            op.emuspeed =(int)value;
             break;
         case kTypeMainThreadTypeValue:
-            op.mainThreadType =value;
+            op.mainThreadType =(int)value;
             break;
         case kTypeVideoThreadTypeValue:
-            op.videoThreadType =value;
+            op.videoThreadType =(int)value;
             break;
         default:
             break;

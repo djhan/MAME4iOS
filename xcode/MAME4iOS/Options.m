@@ -40,6 +40,13 @@
 
 @synthesize touchDirectionalEnabled;
 
+@synthesize turboXEnabled;
+@synthesize turboYEnabled;
+@synthesize turboAEnabled;
+@synthesize turboBEnabled;
+@synthesize turboLEnabled;
+@synthesize turboREnabled;
+
 @synthesize skinValue;
 
 @synthesize btDeadZoneValue;
@@ -230,12 +237,12 @@
         lightgunEnabled = 1;
         lightgunBottomScreenReload = 0;
         
-        _turboXEnabled = 0;
-        _turboYEnabled = 0;
-        _turboAEnabled = 0;
-        _turboBEnabled = 0;
-        _turboLEnabled = 0;
-        _turboREnabled = 0;
+        turboXEnabled = 0;
+        turboYEnabled = 0;
+        turboAEnabled = 0;
+        turboBEnabled = 0;
+        turboLEnabled = 0;
+        turboREnabled = 0;
         
         touchAnalogEnabled = 1;
         touchAnalogHideTouchDirectionalPad = 1;
@@ -279,12 +286,12 @@
         fullLand =  [[[optionsArray objectAtIndex:0] objectForKey:@"fullLand"] intValue];
         fullPort =  [[[optionsArray objectAtIndex:0] objectForKey:@"fullPort"] intValue];
         
-        _turboXEnabled = [[[optionsArray objectAtIndex:0] objectForKey:@"turboXEnabled"] intValue];
-        _turboYEnabled = [[[optionsArray objectAtIndex:0] objectForKey:@"turboYEnabled"] intValue];
-        _turboAEnabled = [[[optionsArray objectAtIndex:0] objectForKey:@"turboAEnabled"] intValue];
-        _turboBEnabled = [[[optionsArray objectAtIndex:0] objectForKey:@"turboBEnabled"] intValue];
-        _turboLEnabled = [[[optionsArray objectAtIndex:0] objectForKey:@"turboLEnabled"] intValue];
-        _turboREnabled = [[[optionsArray objectAtIndex:0] objectForKey:@"turboREnabled"] intValue];
+        turboXEnabled = [[[optionsArray objectAtIndex:0] objectForKey:@"turboXEnabled"] intValue];
+        turboYEnabled = [[[optionsArray objectAtIndex:0] objectForKey:@"turboYEnabled"] intValue];
+        turboAEnabled = [[[optionsArray objectAtIndex:0] objectForKey:@"turboAEnabled"] intValue];
+        turboBEnabled = [[[optionsArray objectAtIndex:0] objectForKey:@"turboBEnabled"] intValue];
+        turboLEnabled = [[[optionsArray objectAtIndex:0] objectForKey:@"turboLEnabled"] intValue];
+        turboREnabled = [[[optionsArray objectAtIndex:0] objectForKey:@"turboREnabled"] intValue];
         
         touchDirectionalEnabled = [[[optionsArray objectAtIndex:0] objectForKey:@"touchDirectionalEnabled"] intValue];
         
@@ -395,12 +402,12 @@
                              [NSString stringWithFormat:@"%d", fourButtonsLand], @"fourButtonsLand",
                              [NSString stringWithFormat:@"%d", animatedButtons], @"animatedButtons",
                              
-                             [NSString stringWithFormat:@"%d", _turboXEnabled], @"turboXEnabled",
-                             [NSString stringWithFormat:@"%d", _turboYEnabled], @"turboYEnabled",
-                             [NSString stringWithFormat:@"%d", _turboAEnabled], @"turboAEnabled",
-                             [NSString stringWithFormat:@"%d", _turboBEnabled], @"turboBEnabled",
-                             [NSString stringWithFormat:@"%d", _turboLEnabled], @"turboLEnabled",
-                             [NSString stringWithFormat:@"%d", _turboREnabled], @"turboREnabled",
+                             [NSString stringWithFormat:@"%d", turboXEnabled], @"turboXEnabled",
+                             [NSString stringWithFormat:@"%d", turboYEnabled], @"turboYEnabled",
+                             [NSString stringWithFormat:@"%d", turboAEnabled], @"turboAEnabled",
+                             [NSString stringWithFormat:@"%d", turboBEnabled], @"turboBEnabled",
+                             [NSString stringWithFormat:@"%d", turboLEnabled], @"turboLEnabled",
+                             [NSString stringWithFormat:@"%d", turboREnabled], @"turboREnabled",
                              
                              [NSString stringWithFormat:@"%d", touchDirectionalEnabled], @"touchDirectionalEnabled",
                              

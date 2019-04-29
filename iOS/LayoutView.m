@@ -89,7 +89,7 @@
         LayoutData *ld = (LayoutData *)[layoutDataArray objectAtIndex:i];
         if(ld.type == kType_ButtonRect ||
            (ld.type == kType_DPadImgRect && g_pref_input_touch_type == TOUCH_INPUT_DPAD) ||
-           (ld.type == kType_StickRect && !g_pref_input_touch_type == TOUCH_INPUT_DPAD)
+           (ld.type == kType_StickRect && !(g_pref_input_touch_type == TOUCH_INPUT_DPAD))
            )
         {
             
@@ -131,8 +131,9 @@
     
     CGRect textRect = CGRectMake(contextRect.origin.x, contextRect.origin.y + yOffset, contextRect.size.width, fontHeight);
     
-    [s drawInRect: textRect withFont: font lineBreakMode: UILineBreakModeClip
-        alignment: UITextAlignmentCenter];
+    [s drawInRect: textRect withFont:
+     font lineBreakMode: NSLineBreakByClipping/*UILineBreakModeClip*/
+        alignment: NSTextAlignmentCenter]; //UITextAlignmentCenter
 }
 
 - (void)updateRelated:(LayoutData *)moved x:(int)ax y:(int)ay
@@ -206,7 +207,7 @@
                  
                  if(ld.type == kType_ButtonRect ||
                     (ld.type == kType_DPadImgRect && g_pref_input_touch_type == TOUCH_INPUT_DPAD) ||
-                    (ld.type == kType_StickRect && !g_pref_input_touch_type == TOUCH_INPUT_DPAD))
+                    (ld.type == kType_StickRect && !(g_pref_input_touch_type == TOUCH_INPUT_DPAD)))
                  {
                      if (MyCGRectContainsPoint([ld getNewRect], pt))
                      {

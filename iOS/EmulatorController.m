@@ -399,7 +399,7 @@ void* app_Thread_Start(void* args)
     if ( popoverController != nil ) {
         popoverController.sourceView = self.view;
         popoverController.sourceRect = CGRectMake(CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds), 0.0f, 0.0f);
-        popoverController.permittedArrowDirections = @[];
+        popoverController.permittedArrowDirections = UIPopoverArrowDirectionAny; //@[];
     }
 #endif
     [self presentViewController:menu animated:YES completion:^{
@@ -2033,7 +2033,8 @@ void myosd_handle_turbo() {
     
     if ( areControlsHidden && g_pref_lightgun_enabled && g_device_is_landscape) {
         [self handleLightgunTouchesBegan:touches];
-        return NO;
+        //return NO;
+        return nil;
     }
     
     for (i = 0; i < touchcount; i++)

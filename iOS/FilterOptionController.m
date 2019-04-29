@@ -51,6 +51,7 @@
 #endif
 #import "ListOptionController.h"
 
+#import "EmulatorController.h"
 #include "myosd.h"
 
 @implementation FilterOptionController
@@ -127,7 +128,8 @@
     
     UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithTitle:@"Done"
                                                                style:UIBarButtonItemStylePlain
-                                                              target: emuController  action:  @selector(done:) ];
+                                                              target: emuController
+                                                              action:  @selector(done:) ];
     self.navigationItem.rightBarButtonItem = button;
     [button release];
 }
