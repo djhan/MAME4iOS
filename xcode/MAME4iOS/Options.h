@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
+//NS_ASSUME_NONNULL_BEGIN
 
 @interface Options : NSObject
 {
@@ -68,7 +68,7 @@ NS_ASSUME_NONNULL_BEGIN
 @public int driverSourceValue;
 @public int categoryValue;
     
-@public NSString *filterKeyword;
+@public  NSString * _Nullable filterKeyword;
     
 @public int lowlsound;
 @public int vsync;
@@ -85,7 +85,7 @@ NS_ASSUME_NONNULL_BEGIN
 @public int stickSize;
     
 @public int wpantype;
-@public NSString *wfpeeraddr;
+@public  NSString * _Nullable wfpeeraddr;
 @public int wfport;
 @public int wframesync;
 @public int btlatency;
@@ -174,7 +174,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (readwrite,assign) int driverSourceValue;
 @property (readwrite,assign) int categoryValue;
 
-@property (readwrite,assign) NSString *filterKeyword;
+@property (readwrite,assign) NSString * _Nullable filterKeyword;
 
 @property (readwrite,assign) int lowlsound;
 @property (readwrite,assign) int vsync;
@@ -192,7 +192,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (readwrite,assign) int stickSize;
 
 @property (readwrite,assign) int wpantype;
-@property (readwrite,assign) NSString *wfpeeraddr;
+@property (readwrite,assign) NSString * _Nullable wfpeeraddr;
 @property (readwrite,assign) int wfport;
 @property (readwrite,assign) int wfframesync;
 @property (readwrite,assign) int btlatency;
@@ -227,4 +227,4 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-NS_ASSUME_NONNULL_END
+//NS_ASSUME_NONNULL_END

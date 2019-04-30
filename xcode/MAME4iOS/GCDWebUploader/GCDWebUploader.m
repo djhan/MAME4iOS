@@ -285,6 +285,9 @@
 
 @implementation GCDWebUploader
 
+//superClass에 선언되어 있기 때문에 dynamic 지시어 사용
+@dynamic delegate;
+
 @synthesize uploadDirectory=_uploadDirectory, allowedFileExtensions=_allowedExtensions, allowHiddenItems=_allowHidden,
             title=_title, header=_header, prologue=_prologue, epilogue=_epilogue, footer=_footer;
 

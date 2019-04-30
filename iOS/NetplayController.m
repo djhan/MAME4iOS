@@ -46,6 +46,8 @@
 #import "Options.h"
 #import "OptionsController.h"
 #import "ListOptionController.h"
+//selector 에러 방지
+#import "EmulatorController.h"
 
 #include "netplay.h"
 #include "skt_netplay.h"
@@ -143,8 +145,9 @@ static void netplay_warn_callback(char *msg)
     [super loadView];
     
     UIBarButtonItem *button = [[UIBarButtonItem alloc] initWithTitle:@"Done"
-                                                               style:UIBarButtonItemStyleBordered
-                                                              target: emuController  action:  @selector(done:) ];
+                                                               style:UIBarButtonItemStylePlain //UIBarButtonItemStyleBordered
+                                                              target: emuController
+                                                              action:  @selector(done:) ];
     self.navigationItem.rightBarButtonItem = button;
     [button release];
 }
