@@ -2894,20 +2894,32 @@ void myosd_handle_turbo() {
     if(count!=0)
     {
         //UIAlertController *progressAlert = [UIAlertController alertControllerWithTitle:@"Moving Newer ROMs" message:@"Please wait..." preferredStyle:UIAlertControllerStyleAlert];
+#if TARGET_OS_IOS
         UIAlertView *progressAlert = [[UIAlertView alloc] initWithTitle:@"Moving Newer ROMs"
                                                                 message:@"Please wait..."
                                                                delegate:nil
                                                       cancelButtonTitle:nil
                                                       otherButtonTitles:nil];
-        UIProgressView *progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(30.0f, 80.0f, 225.0f, 90.0f)];
-        [progressAlert addSubview:progressView];
-#if TARGET_OS_IOS
-        [progressView setProgressViewStyle: UIProgressViewStyleBar];
 #elif TARGET_OS_TV
-        [progressView setProgressViewStyle: UIProgressViewStyleDefault];
+        UIAlertController *progressAlert = [UIAlertController alertControllerWithTitle:@"Moving Newer ROMs" message:@"Please wait..." preferredStyle:UIAlertControllerStyleAlert];
 #endif
         
-        [progressAlert show];
+        UIProgressView *progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(30.0f, 80.0f, 225.0f, 90.0f)];
+        
+#if TARGET_OS_IOS
+        [progressAlert addSubview:progressView];
+        [progressView setProgressViewStyle: UIProgressViewStyleBar];
+
+        [progressAlert show]; //표시
+#elif TARGET_OS_TV
+        [progressAlert.view addSubview:progressView];
+        [progressView setProgressViewStyle: UIProgressViewStyleDefault];
+        
+        [self presentViewController:progressAlert
+                           animated:YES
+                         completion:nil];
+#endif
+        
         [progressView setProgress:0.0f];
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -2945,7 +2957,11 @@ void myosd_handle_turbo() {
                 });
             }
             dispatch_async(dispatch_get_main_queue(), ^{
+#if TARGET_OS_IOS
                 [progressAlert dismissWithClickedButtonIndex:0 animated:YES];
+#elif TARGET_OS_TV
+                [progressAlert dismissViewControllerAnimated:YES completion:nil];
+#endif
                 [progressAlert release];
                 [progressView release];
                 if(err == FALSE)
